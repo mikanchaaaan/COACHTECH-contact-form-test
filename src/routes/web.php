@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// お問い合わせフォーム入力画面の表示
+Route::get('/', [ContactController::class, 'index']);
+
+// お問い合わせフォーム確認画面の表示
+Route::post('/confirm', [ContactController::class, 'confirm']);
+
+// Thanksページの表示
+Route::post('/thanks', [ContactController::class, 'store']);
