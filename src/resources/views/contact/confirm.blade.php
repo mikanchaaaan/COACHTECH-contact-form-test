@@ -26,7 +26,8 @@
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">性別</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="gender" value="{{ $contact['gender'] }}" readonly />
+                        <input type="text" name="gender" value="{{ $contact['gender'] == 1 ? '男性' : ($contact['gender'] == 2 ? '女性' : ($contact['gender'] == 3 ? 'その他' : '')) }}" readonly />
+                        <input type="hidden" name="gender" value="{{ $contact['gender'] }}" />
                     </td>
                 </tr>
                 <!-- メールアドレス -->
@@ -61,7 +62,8 @@
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">お問い合わせの種類</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="category_id" value="{{ $contact['category_id'] }}" readonly />
+                        <input type="text" name="category_id" value="{{ $contact['category_name'] }}" readonly />
+                        <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}" />
                     </td>
                 </tr>
                 <!-- お問い合わせ内容 -->
@@ -85,3 +87,4 @@
         </div>
     </form>
 </div>
+@endsection

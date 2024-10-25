@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,7 @@ use App\Http\Controllers\ContactController;
 |
 */
 
+// お問い合わせフォーム
 // お問い合わせフォーム入力画面の表示
 Route::get('/', [ContactController::class, 'index']);
 
@@ -22,3 +24,9 @@ Route::post('/confirm', [ContactController::class, 'confirm']);
 
 // Thanksページの表示
 Route::post('/thanks', [ContactController::class, 'store']);
+
+
+// 管理画面の表示
+Route::middleware('auth')->group(function() {
+    Route::get('/admin', [AuthController::class, 'index']);
+});
