@@ -14,6 +14,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
+use Laravel\Fortify\Contracts\LogoutResponse;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -22,10 +23,19 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        // ユーザ登録後にログイン画面に遷移するように設定
         $this->app->singleton(
             RegisteredUserController::class,
             RegisterController::class
         );
+
+        // ログアウト後はログイン画面に遷移するように設定
+        $this->app->instance(LogoutResponse::class, new class implements LogoutResponse {
+            public function toResponse($request)
+            {
+                return redirect('login');
+            }
+        });
     }
 
     /**

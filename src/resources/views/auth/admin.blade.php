@@ -5,9 +5,12 @@
 @endsection
 
 @section('button')
-<div class="button">
-    <a href="/logout" class="button_inner">logout</a>
-</div>
+@if (Auth::check())
+<form class="logout-form" action="/logout" method="POST">
+    @csrf
+    <button class="button_inner">logout</button>
+</form>
+@endif
 @endsection
 
 @section('content')
@@ -46,9 +49,16 @@
             <button class="reset-button">リセット</button>
         </form>
     </div>
-    <!-- エクスポートボタン -->
-    <button class="export-button">エクスポート</button>
-
+    <div class="export-and-pagination">
+        <!-- エクスポートボタン -->
+        <div class="export__inner">
+            <button class="export-button">エクスポート</button>
+        </div>
+        <!-- ページネーション -->
+        <div class="pagination">
+            {{ $contacts->links() }}
+        </div>
+    </div>
     <!-- 情報の出力 -->
     <div class="contact-table">
         <table class="contact-table__inner">

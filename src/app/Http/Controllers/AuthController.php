@@ -12,7 +12,8 @@ class AuthController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $contacts = Contact::all();
+        // ページネーションの設定
+        $contacts = Contact::Paginate(7);
 
         // カテゴリ名の取得
         foreach ($contacts as $contact) {
