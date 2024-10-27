@@ -1,0 +1,155 @@
+/* フォーム全体のスタイル */
+.contact-form__content {
+    width: 70%;
+    margin: 50px auto;
+    font-family: 'Inika';
+    color: #8B7969;
+}
+
+.contact-form__heading h2 {
+    text-align: center;
+    font-size: 35px;
+    color: #8B7969;
+    margin-bottom: 50px;
+    font-weight: normal;
+}
+
+/* フォームグループのスタイル */
+.form__group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.form__group-title {
+    width: 25%;
+    font-size: 14px;
+    color: #8B7969;
+    margin-bottom: 8px;
+}
+
+.form__label--item {
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.form__label--required {
+    color: #FF9494;
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+.form__group-content {
+    width: 50%;
+}
+
+/* インプットとセレクトのスタイル */
+.form__group-content input[type="text"],
+.form__group-content select,
+.form__input--textarea textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #BEb1A6;
+    border: 1px solid #dcdcdc;
+    border-radius: 3px;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+.form__group-content input[type="text"]:focus,
+.form__group-content select:focus,
+.form__input--textarea textarea:focus {
+    border-color: #a89b96;
+    outline: none;
+    background-color: #fff;
+}
+
+/* 名前の横並び*/
+.form__input--name {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* 性別とラジオボタンの横並び */
+.form__input--gender {
+    display: flex;
+    align-items: center;
+    /* 垂直方向の中央揃え */
+    gap: 32px;
+    /* 各要素の間隔 */
+}
+
+/* 各ラジオボタンの選択肢を横並びに */
+.form__input--gender-option {
+    display: flex;
+    align-items: center;
+    /* ラジオボタンとテキストを縦方向に中央揃え */
+    gap: 4px;
+    /* ラジオボタンとラベルテキストの間隔 */
+}
+/* エラーメッセージのスタイル */
+.form__error {
+    font-size: 12px;
+    color: #d9534f;
+    margin-top: 5px;
+}
+
+/* 電話番号の横並び */
+.form__input--tel {
+    display: flex;
+    gap: 10px;
+}
+
+.form__input--tel--number {
+    width: 180px;
+}
+.form__input--tel--hyphen p {
+    margin: 0;
+    padding: 10px 0;
+    color: #8B7969;
+}
+
+/* お問い合わせの種類セレクトボックス */
+.form__select--content--item {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #8B7969;
+    border: 1px solid #dcdcdc;
+    border-radius: 3px;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+
+.form__input--textarea {
+    width: 600px;
+}
+/* テキストエリアのスタイル */
+.form__input--textarea textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 14px;
+    color: #6d5f5b;
+    border: 1px solid #dcdcdc;
+    border-radius: 3px;
+    background-color: #f4f4f4;
+    resize: vertical;
+}
+
+/* 送信ボタンのスタイル */
+.form__button-submit {
+    width: 20%;
+    display: block;
+    margin:  50px auto;
+    padding: 10px 40px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #6d5f5b;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}

@@ -30,3 +30,6 @@ Route::post('/thanks', [ContactController::class, 'store']);
 Route::middleware('auth')->group(function() {
     Route::get('/admin', [AuthController::class, 'index']);
 });
+
+// Admin画面の検索機能
+Route::get('/admin/search', [AuthController::class, 'search']);

@@ -1,0 +1,15 @@
+/* ヘッダー全体のスタイル */
+.header {
+    padding: 20px 0;
+    border-bottom: 1px solid #e0dfde;
+    /* 下線で区切りを追加 */
+    text-align: center;
+}
+
+/* ロゴのスタイル */
+.header__logo {
+    font-size: 32px;
+    font-weight: normal;
+    color: #8B7969;
+    font-family: 'Inika';
+}
