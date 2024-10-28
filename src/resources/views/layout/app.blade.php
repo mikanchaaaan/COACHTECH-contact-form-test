@@ -8,6 +8,7 @@
     <title>FashionablyLate</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
+    @livewireStyles
     @yield('css')
 </head>
 
@@ -17,14 +18,14 @@
             <h1 class="header__logo">
                 FashionablyLate
             </h1>
-        @yield('button')
+            @yield('button')
         </div>
     </header>
 
     <main>
         @yield('content')
     </main>
-
+    @livewireScripts
 </body>
 
 </html>

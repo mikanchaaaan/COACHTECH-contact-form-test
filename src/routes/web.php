@@ -33,3 +33,6 @@ Route::middleware('auth')->group(function() {
 
 // Admin画面の検索機能
 Route::get('/admin/search', [AuthController::class, 'search']);
+
+//
+Route::delete('/delete', [AuthController::class, 'delete']);

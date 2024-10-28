@@ -59,4 +59,11 @@ class AuthController extends Controller
         return view('auth.admin', compact('contacts', 'categories'));
     }
 
+    // お問い合わせの削除
+    public function delete(Request $request)
+    {
+        Contact::find($request->id)->delete();
+        return redirect('/admin')->with('message', 'Contactを削除しました');
+    }
+
 }

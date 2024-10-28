@@ -2,6 +2,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+<link rel="stylesheet" href="{{ asset('css/modal.css') }}">
 @endsection
 
 @section('button')
@@ -49,36 +50,16 @@
             <button class="reset-button">リセット</button>
         </form>
     </div>
-    <div class="export-and-pagination">
-        <!-- エクスポートボタン -->
-        <div class="export__inner">
-            <button class="export-button">エクスポート</button>
-        </div>
-        <!-- ページネーション -->
-        <div class="pagination">
-            {{ $contacts->links() }}
-        </div>
+</div>
+<div class="export-and-pagination">
+    <!-- エクスポートボタン -->
+    <div class="export__inner">
+        <button class="export-button">エクスポート</button>
     </div>
-    <!-- 情報の出力 -->
-    <div class="contact-table">
-        <table class="contact-table__inner">
-            <tr class="contact-table__row">
-                <th class="contact-table__header">お名前</th>
-                <th class="contact-table__header">性別</th>
-                <th class="contact-table__header">メールアドレス</th>
-                <th class="contact-table__header">お問い合わせの種類</th>
-            </tr>
-            @foreach ($contacts as $contact)
-            <tr class="contact-table__row">
-                <td class="contact-table__item">{{ $contact['last_name'] .  " " . $contact['first_name']}}</td>
-                <td class="contact-table__item">{{ $contact['gender'] == 1 ? '男性' : ($contact['gender'] == 2 ? '女性' : ($contact['gender'] == 3 ? 'その他' : '')) }}</td>
-                <td class="contact-table__item">{{ $contact['email'] }}</td>
-                <td class="contact-table__item">{{ $contact->category->content }}</td>
-                <td class="contact-table__item">
-                    <button class="detail-button">詳細</button>
-                </td>
-            </tr>
-            @endforeach
-        </table>
+    <!-- ページネーション -->
+    <div class="pagination">
+        {{ $contacts->links() }}
     </div>
-    @endsection
+</div>
+<livewire:modal />
+@endsection
