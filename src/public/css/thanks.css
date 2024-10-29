@@ -1,0 +1,80 @@
+.thanks__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* ビューポート全体の高さを設定 */
+    margin: 0;
+    background-color: #ffffff;
+    /* 背景色を指定 */
+}
+
+.thanks__box-inner {
+    position: relative;
+    text-align: center;
+    /* テキストを中央揃え */
+}
+
+.background-text {
+    font-size: 280px;
+    /* フォントサイズを設定 */
+    font-weight: bold;
+    color: transparent;
+    /* テキストを透明にする */
+    color: #8B79690D;
+    /* 背景色を指定 */
+    padding: 10px;
+    /* テキストのサイズに合わせて枠を作成 */
+}
+
+.foreground-text {
+    position: absolute;
+    /* 絶対位置に設定 */
+    top: 50%;
+    /* 垂直中央 */
+    left: 50%;
+    /* 水平中央 */
+    transform: translate(-50%, -50%);
+    /* 中央揃えのための調整 */
+    font-family: Inika;
+    font-size: 30px;
+    font-weight: 700;
+    /* 上に表示するテキストのサイズ */
+    color: #8b7969;
+    /* テキストの色を指定 */
+    z-index: 1;
+    /* 背景より前に表示 */
+}
+
+.home__button {
+    display: block;
+    width: 140px;
+    /* ボタンの幅を設定 */
+    padding: 10px 40px;
+    font-size: 20px;
+    /* ボタンのフォントサイズ */
+    color: #fff;
+    /* ボタンの文字色 */
+    background-color: #82756A;
+    font-family: Inika;
+    font-weight: 400;
+    /* ボタンの背景色 */
+    border: none;
+    /* ボーダーを無くす */
+    /* 角を丸くする */
+    cursor: pointer;
+    /* マウスカーソルをポインターに */
+    transition: background-color 0.3s ease;
+    /* ホバー時の背景色の変化 */
+    text-align: center;
+    /* テキストを中央揃え */
+    margin: 10px auto;
+    /* 上マージンを追加し、下マージンをゼロにして中央配置 */
+    top: calc(50% + 50px);
+    /* 50%よりさらに上に移動 */
+    left: 46%;
+    /* 親要素の相対位置に基づく */
+    position: absolute;
+    z-index: 2;
+    /* テキストの上に表示 */
+}

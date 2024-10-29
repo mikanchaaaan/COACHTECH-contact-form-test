@@ -71,23 +71,18 @@
     gap: 16px;
 }
 
-/* 性別とラジオボタンの横並び */
 .form__input--gender {
     display: flex;
     align-items: center;
-    /* 垂直方向の中央揃え */
     gap: 32px;
-    /* 各要素の間隔 */
 }
 
-/* 各ラジオボタンの選択肢を横並びに */
 .form__input--gender-option {
     display: flex;
     align-items: center;
-    /* ラジオボタンとテキストを縦方向に中央揃え */
     gap: 4px;
-    /* ラジオボタンとラベルテキストの間隔 */
 }
+
 /* エラーメッセージのスタイル */
 .form__error {
     font-size: 12px;
@@ -110,7 +105,7 @@
     color: #8B7969;
 }
 
-/* お問い合わせの種類セレクトボックス */
+/* お問い合わせの種類 */
 .form__select--content--item {
     width: 100%;
     padding: 10px;
@@ -147,7 +142,7 @@
     padding: 10px 40px;
     font-size: 16px;
     color: #fff;
-    background-color: #6d5f5b;
+    background-color: #82756A;
     border: none;
     border-radius: 3px;
     cursor: pointer;

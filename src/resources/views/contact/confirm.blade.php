@@ -76,15 +76,8 @@
             </table>
         </div>
         <div class="form__button">
-            <div class="form__button-submit">
-                <button type="submit">送信</button>
-            </div>
+            <button class="form__button-submit" type="submit">送信</button>
+            <a class="form__button-repair" href="/">修正</a>
         </div>
     </form>
-    <form action="/" method="get">
-        <div class="form__button-repair">
-            <button type="submit">修正</button>
-        </div>
-    </form>
-</div>
-@endsection
+    @endsection
