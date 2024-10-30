@@ -30,30 +30,31 @@ class AuthController extends Controller
         $query = Contact::with('category');
 
         // 名前とメールアドレスの検索
-        if(!empty($request->keyword)) {
+        if (!empty($request->keyword)) {
             $query->KeywordSearch($request->keyword);
         }
 
 
         // 性別の検索
-        if(!empty($request->gender)) {
+        if (!empty($request->gender)) {
             $query->GenderSearch($request->gender);
         }
 
 
         // お問い合わせの種類の検索
-        if(!empty($request->category_id)) {
+        if (!empty($request->category_id)) {
             $query->CategoryIdSearch($request->category_id);
         }
 
         // 日付の検索
-        if(!empty($request->date)) {
+        if (!empty($request->date)) {
             $query->DateSearch($request->date);
         }
 
-        // 検索結果の取得
-        $contacts = $query->get();
+        // 検索結果の取得してセッションに保存
+        $contacts = $query->paginate(7);
         $categories = Category::all();
+        session(['contacts' => $contacts]);
 
         // 検索結果の表示
         return view('auth.admin', compact('contacts', 'categories'));
@@ -65,5 +66,4 @@ class AuthController extends Controller
         Contact::find($request->id)->delete();
         return redirect('/admin')->with('message', 'Contactを削除しました');
     }
-
 }

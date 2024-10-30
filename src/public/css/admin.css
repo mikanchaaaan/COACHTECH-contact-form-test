@@ -1,5 +1,294 @@
-  svg.w-5.h-5 {
-      /*paginateメソッドの矢印の大きさ調整のために追加*/
-      width: 30px;
-      height: 30px;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 検索フォーム  */
+.search-form__content {
+  width: 100%;
+  margin: 50px auto;
+  font-family: 'Inika';
+  color: #8B7969;
+}
+
+.search-form__inner{
+  width: 100%;
+}
+
+.search-form__heading h2 {
+  text-align: center;
+  font-size: 35px;
+  color: #8B7969;
+  margin-bottom: 50px;
+  font-weight: normal;
+}
+
+.search-form__item {
+  display: flex;
+  width: 100%;
+  /* フレックスボックスを使用 */
+  align-items: center;
+  /* 垂直方向の中央揃え */
+  height: 50px;
+  /* 高さを固定 */
+  margin-bottom: 10px;
+  /* 各アイテムの下にマージン */
+}
+
+.search-form__item-name {
+  width: 30%;
+  height: 100%;
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #e3ded9;
+  background-color: #FBFBFB;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Inika;
+  text-align: center;
+  color:#BEB1A6;
+}
+
+.search-form__item-gender{
+  width: auto;
+  height: 100%;
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #e3ded9;
+  background-color: #FBFBFB;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Inika;
+  text-align: center;
+  color: #8B7969;
+}
+
+.search-form__item-select {
+  width: auto;
+  height: 100%;
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #e3ded9;
+  background-color: #FBFBFB;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Inika;
+  text-align: center;
+  color: #8B7969;
+}
+
+.search-form__item-date {
+  width: auto;
+  height: 100%;
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #e3ded9;
+  background-color: #FBFBFB;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Inika;
+  text-align: center;
+  color: #8B7969;
+}
+
+
+/* 検索ボタン */
+.search-button {
+  background-color: #82756A;
+  width: 8%;
+  height: 100%;
+  color: #fff;
+  padding: 8px 16px;
+  border: 1px solid #8B7969;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* リセットボタン */
+.reset-button {
+  display: inline-block;
+    background-color: #d9c6b5;
+    height: 50px;
+    width: auto;
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    text-align: center;
+    line-height: 50px;
+    padding: 0 15px;
+    margin-left: 10px;
+}
+
+/* エクスポートボタン */
+.export-button {
+  background-color: #E1DBD6;
+  width: 150px;
+  height: 40px;
+  padding: 8px 16px;
+  font-size: 18px;
+  color: #8B7969;
+  border: none;
+  margin-top: 20px;
+}
+
+/* テーブルのスタイル */
+.contact-table__inner {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.contact-table__item {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e8dcc4;
+}
+
+.contact-table__inner th,
+.contact-table__inner td {
+  padding: 15px 25px;
+  text-align: left;
+  border-bottom: 1px solid #e0dfde;
+  font-size: 20px;
+}
+
+.contact-table__inner th {
+  background-color: #8B7969;
+  color: #fff;
+  font-weight: 700;
+}
+
+.contact-table__inner tr:nth-child(even) {
+  background-color: #FFFFFF;
+}
+
+/* 詳細ボタン */
+.detail-button {
+  background-color: #f4f4f4;
+  color: #d9c6b5;
+  padding: 8px 20px;
+  border: 1px solid #D9C699;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* ページネーション */
+.export-and-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination a,
+.pagination span {
+  padding: 8px 12px;
+  margin: 0;
+  background-color: #ffffff;
+  color: #8b7969;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #e0dfde;
+}
+
+.pagination .active .page-link{
+  background-color: #6e5033;
+  color: #ffffff;
+}
+
+/* モーダルウインドウ */
+.modal-wrapper {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-window {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px #8b7969(4, 4, 4, 0.5);
+  border: 1px solid #8b7969;
+  width: 90%;
+  max-width: 700px;
+  height: auto;
+  max-height: 80%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.modal-close {
+  background: #ffffff;
+  border: 1px solid #897969;
+  font-size: 30px;
+  color: #897969;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+/* モーダルウインドウ内のテーブル */
+.modal__content {
+  width: 100%;
+  padding: 20px 60px;
+  margin: 30px;
+  background-color: #fff;
+}
+
+.modal__content th,
+.modal__content td {
+  padding: 8px;
+  border: none;
+  text-align: left;
+}
+
+.modal-inner th {
+  background-color: #FFFFFF;
+  color: #8b7969;
+  font-weight: 700;
+  font-size: 20px;
+  width: 35%;
+  line-height: 1.5;
+}
+
+/* 削除ボタン */
+.delete-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.delete-btn {
+    padding: 8px 20px;
+    background-color: #BA370D;
+    color: #FFFFFF;
+    font-size: 18px;
+    border: none;
+
+}

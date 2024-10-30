@@ -1,4 +1,14 @@
 <div>
+    <div class="export-and-pagination">
+        <!-- エクスポートボタン -->
+        <div class="export__inner">
+            <button class="export-button">エクスポート</button>
+        </div>
+        <!-- ページネーション -->
+        <div class="pagination">
+            {{ $contacts->appends(request()->query())->links('vendor.pagination.custom') }}
+        </div>
+    </div>
     <!-- 情報の出力 -->
     <div class="contact-table">
         <table class="contact-table__inner">
@@ -6,23 +16,25 @@
                 <th class="contact-table__header">お名前</th>
                 <th class="contact-table__header">性別</th>
                 <th class="contact-table__header">メールアドレス</th>
-                <th class="contact-table__header">お問い合わせの種類</th>
+                <th class="contact-table__header" colspan="2">お問い合わせの種類</th>
             </tr>
             @foreach ($contacts as $contact)
             <tr class="contact-table__row">
-                <td class="contact-table__item">{{ $contact['last_name'] .  " " . $contact['first_name']}}</td>
-                <td class="contact-table__item">{{ $contact['gender'] == 1 ? '男性' : ($contact['gender'] == 2 ? '女性' : ($contact['gender'] == 3 ? 'その他' : '')) }}</td>
-                <td class="contact-table__item">{{ $contact['email'] }}</td>
+                <td class="contact-table__item">{{ $contact->last_name .  " " . $contact->first_name}}</td>
+                <td class="contact-table__item">{{ $contact->gender == 1 ? '男性' : ($contact->gender == 2 ? '女性' : ($contact->gender == 3 ? 'その他' : '')) }}</td>
+                <td class="contact-table__item">{{ $contact->email }}</td>
                 <td class="contact-table__item">{{ $contact->category->content }}</td>
                 <td class="contact-table__item">
-                    <button wire:click="openModal('{{ $contact->id }}')" type="button" class="detail">詳細</button>
+                    <button wire:click="openModal('{{ $contact->id }}')" type="button" class="detail-button">詳細</button>
                     <!-- モーダルウインドウの表示 -->
                     @if($showModal && $contact)
                     <div class="modal-wrapper">
                         <div class="modal-window">
-                            <button wire:click="closeModal()" type="button" class="modal-close">
+                            <div class="modal-header">
+                                <button wire:click="closeModal()" type="button" class="modal-close">
                                 ×
-                            </button>
+                                </button>
+                            </div>
                             <table class="modal__content">
                                 <tr class="modal-inner">
                                     <th class="modal-ttl">お名前</th>

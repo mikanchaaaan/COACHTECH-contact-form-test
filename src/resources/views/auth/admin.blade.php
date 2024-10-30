@@ -13,10 +13,11 @@
         <button class="button__inner">logout</button>
     </form>
 </div>
-    @endif
-    @endsection
+@endif
+@endsection
 
-    @section('content')
+@section('content')
+<div class="container">
     <div class="search-form__content">
         <div class="search-form__inner">
             <div class="search-form__heading">
@@ -27,9 +28,9 @@
                 <!-- 検索フォーム -->
                 <div class="search-form__item">
                     <!-- メールアドレス/名前入力 -->
-                    <input type="text" class="search-form__item-input" placeholder="名前やメールアドレスを入力してください" name="keyword" value="{{ old('keyword') }}">
+                    <input type="text" class="search-form__item-name" placeholder="名前やメールアドレスを入力してください" name="keyword" value="{{ old('keyword') }}">
                     <!-- 性別選択 -->
-                    <select name="gender" class="search-form__item-select">
+                    <select name="gender" class="search-form__item-gender">
                         <option value="">性別</option>
                         <option value="男性">男性</option>
                         <option value="女性">女性</option>
@@ -43,25 +44,14 @@
                         @endforeach
                     </select>
                     <!-- 日付選択 -->
-                    <input type="date" class="search-form__item-input" name="date" value="{{ old('date') }}">
+                    <input type="date" class="search-form__item-date" name="date" value="{{ old('date') }}">
                     <!-- 検索ボタン -->
                     <button class="search-button">検索</button>
+                    <!-- リセットボタン -->
+                    <a href="{{ url()->current() }}" class="reset-button">リセット</a>
+                </div>
             </form>
-            <!-- リセットボタン -->
-            <form action="" class="reset-form">
-                <button class="reset-button">リセット</button>
-            </form>
         </div>
-    </div>
-    <div class="export-and-pagination">
-        <!-- エクスポートボタン -->
-        <div class="export__inner">
-            <button class="export-button">エクスポート</button>
-        </div>
-        <!-- ページネーション -->
-        <div class="pagination">
-            {{ $contacts->links() }}
-        </div>
-    </div>
-    <livewire:modal />
-    @endsection
+
+        <livewire:modal/>
+        @endsection

@@ -6,18 +6,26 @@ use Livewire\Component;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\Session;
 
 class Modal extends Component
 {
     use WithPagination;
+    protected $contacts;
     public $showModal = false;
-
     public $contact;
     public $genderLabel;
+
+
+    public function mount()
+    {
+        $this->contacts = Session::get('contacts');
+    }
 
     public function openModal($id)
     {
         $this->contact = Contact::with('category')->find($id);
+        $this->contacts = Session::get('contacts');
         $this->showModal = true;
     }
 
@@ -25,6 +33,7 @@ class Modal extends Component
     {
         $this->showModal = false;
         $this->contact = null;
+        $this->contacts = Session::get('contacts');
     }
 
     public function genderLabel()
@@ -45,6 +54,6 @@ class Modal extends Component
 
     public function render()
     {
-        return view('livewire.modal', ['contacts' => Contact::with('category')->paginate(7)]);
+        return view('livewire.modal', ['contacts' => $this->contacts]);
     }
 }
