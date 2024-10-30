@@ -19,7 +19,7 @@
 * MySQL 8.0.26
 
 ## ER図
-![contact_form](https://github.com/user-attachments/assets/a6a262e1-36f8-4d9f-884b-ffd979e0b085)
+![contact_form](https://github.com/user-attachments/assets/8032da84-65d9-4ecc-862c-7bd8c98dc13c)
 
 ## URL
 * 開発環境：http://localhost/
