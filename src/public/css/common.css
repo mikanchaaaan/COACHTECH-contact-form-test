@@ -26,6 +26,7 @@
     transform: translateX(-50%);
 }
 
+/* ヘッダー上のボタンの設定 */
 .button {
     width: 100px;
     margin-left: auto;

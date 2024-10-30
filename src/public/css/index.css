@@ -43,10 +43,19 @@
 }
 
 /* インプットとセレクトのスタイル */
-.form__group-content input[type="text"],
-.form__group-content select,
-.form__input--textarea textarea {
+.form__group-content input {
     width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #BEb1A6;
+    border: 1px solid #dcdcdc;
+    border-radius: 3px;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+.form__group-content select {
+    width: 60%;
     padding: 10px;
     font-size: 14px;
     color: #BEb1A6;
@@ -59,7 +68,7 @@
 .form__group-content input[type="text"]:focus,
 .form__group-content select:focus,
 .form__input--textarea textarea:focus {
-    border-color: #a89b96;
+    border-color: #beb1a6;
     outline: none;
     background-color: #fff;
 }
@@ -86,8 +95,7 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 2bx solid #8b7969;
-    /* ボーダーの色 */
+    border: 2px solid #8b7969;
     margin-right: 10px;
     vertical-align: middle;
     position: relative;
@@ -99,13 +107,11 @@
     height: 20px;
     border-radius: 50%;
     border: 2px solid #8b7969;
-    /* 同じボーダーの色 */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
-    /* ラベルテキストの後ろに配置 */
 }
 
 .radio-mark::after {
@@ -114,7 +120,6 @@
     height: 20px;
     border-radius: 50%;
     background: transparent;
-    /* デフォルトは透明 */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -124,7 +129,6 @@
 
 .form__input--gender input:checked+.radio-mark::after {
     background: #8b7969;
-    /* チェック時の塗りつぶし色 */
 }
 .form__input--gender-option {
     display: flex;
@@ -148,6 +152,11 @@
 .form__input--tel--number {
     width: 180px;
 }
+
+.form__input--tel--number input {
+    text-align: center;
+}
+
 .form__input--tel--hyphen p {
     margin: 0;
     padding: 10px 0;
@@ -159,24 +168,29 @@
     width: 100%;
     padding: 10px;
     font-size: 14px;
-    color: #8B7969;
+    color: #beb1a6;
     border: 1px solid #dcdcdc;
     border-radius: 3px;
     background-color: #f4f4f4;
     box-sizing: border-box;
+    appearance: none;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="%238B7969" d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 60px;
+    padding-right: 30px;
 }
 
-
-.form__input--textarea {
-    width: 600px;
-}
 /* テキストエリアのスタイル */
+.form__input--textarea {
+    width: 100%;
+}
 .form__input--textarea textarea {
     width: 100%;
     height: 100px;
     padding: 10px;
     font-size: 14px;
-    color: #6d5f5b;
+    color: #beb1a6;
     border: 1px solid #dcdcdc;
     border-radius: 3px;
     background-color: #f4f4f4;

@@ -89,7 +89,7 @@
                 <div class="form__input--text--email">
                     <!-- メールアドレス入力-->
                     <div class="form__input--email">
-                        <input type="text" name="email" placeholder="test@example.com" value="{{ old('email', $contactData['email'] ?? '') }}" />
+                        <input type="text" name="email" placeholder="例: test@example.com" value="{{ old('email', $contactData['email'] ?? '') }}" />
                     </div>
                     <!-- バリデーション(email) -->
                     <div class="form__error">

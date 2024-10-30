@@ -34,5 +34,5 @@ Route::middleware('auth')->group(function() {
 // Admin画面の検索機能
 Route::get('/admin/search', [AuthController::class, 'search']);
 
-//
+// お問い合わせの削除
 Route::delete('/delete', [AuthController::class, 'delete']);

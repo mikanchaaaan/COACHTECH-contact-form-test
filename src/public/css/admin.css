@@ -31,13 +31,9 @@
 .search-form__item {
   display: flex;
   width: 100%;
-  /* フレックスボックスを使用 */
   align-items: center;
-  /* 垂直方向の中央揃え */
   height: 50px;
-  /* 高さを固定 */
   margin-bottom: 10px;
-  /* 各アイテムの下にマージン */
 }
 
 .search-form__item-name {
