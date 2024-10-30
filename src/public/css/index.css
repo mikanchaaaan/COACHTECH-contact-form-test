@@ -77,6 +77,55 @@
     gap: 32px;
 }
 
+.form__input--gender input {
+    display: none;
+}
+
+.radio-mark {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2bx solid #8b7969;
+    /* ボーダーの色 */
+    margin-right: 10px;
+    vertical-align: middle;
+    position: relative;
+}
+
+.radio-mark::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #8b7969;
+    /* 同じボーダーの色 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    /* ラベルテキストの後ろに配置 */
+}
+
+.radio-mark::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: transparent;
+    /* デフォルトは透明 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: background 0.2s ease;
+}
+
+.form__input--gender input:checked+.radio-mark::after {
+    background: #8b7969;
+    /* チェック時の塗りつぶし色 */
+}
 .form__input--gender-option {
     display: flex;
     align-items: center;

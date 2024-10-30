@@ -19,13 +19,13 @@ class Modal extends Component
 
     public function mount()
     {
-        $this->contacts = Session::get('contacts');
+        $this->contacts = Session::get('contacts', []);
     }
 
     public function openModal($id)
     {
         $this->contact = Contact::with('category')->find($id);
-        $this->contacts = Session::get('contacts');
+        $this->contacts = Session::get('contacts', []);
         $this->showModal = true;
     }
 
@@ -33,7 +33,7 @@ class Modal extends Component
     {
         $this->showModal = false;
         $this->contact = null;
-        $this->contacts = Session::get('contacts');
+        $this->contacts = Session::get('contacts', []);
     }
 
     public function genderLabel()

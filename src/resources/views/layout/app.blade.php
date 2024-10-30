@@ -8,6 +8,9 @@
     <title>FashionablyLate</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Inika:wght@400;700&display=swap" rel="stylesheet">
     @livewireStyles
     @yield('css')
 </head>

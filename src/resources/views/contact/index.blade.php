@@ -48,22 +48,25 @@
                 <div class="form__input--gender">
                     <!-- 選択肢（男性） -->
                     <div class="form__input--gender--male">
-                        <label for="form__input--gender-option">
+                        <label for="gender__male">
                             <input type="radio" id="gender__male" name="gender" value="1" {{ old('gender', $contactData['gender'] ?? 1) == 1 ? 'checked' : '' }} />
+                            <span class="radio-mark"></span>
                             男性
                         </label>
                     </div>
                     <!-- 選択肢（女性） -->
                     <div class="form__input--gender--female">
-                        <label for="form__input--gender-option">
+                        <label for="gender__female">
                             <input type="radio" id="gender__female" name="gender" value="2" {{ old('gender', $contactData['gender'] ?? 1) == 2 ? 'checked' : '' }} />
+                            <span class="radio-mark"></span>
                             女性
                         </label>
                     </div>
                     <!-- 選択肢（その他） -->
                     <div class="form__input--gender--other">
-                        <label for="form__input--gender-option">
+                        <label for="gender__other">
                             <input type="radio" id="gender__other" name="gender" value="3" {{ old('gender', $contactData['gender'] ?? 1) == 3 ? 'checked' : '' }} />
+                            <span class="radio-mark"></span>
                             その他
                         </label>
                     </div>
@@ -126,23 +129,11 @@
                         <input type="text" name="tel_low" placeholder="5678" value="{{ old('tel_low', $contactData['tel_low'] ?? '') }}" />
                     </div>
                 </div>
-                <!-- バリデーション(tel_high) -->
+                <!-- バリデーション(tel) -->
                 <div class="form__error">
-                    @error('tel_high')
-                    {{ $message }}
-                    @enderror
-                </div>
-                <!-- バリデーション(tel_middle) -->
-                <div class="form__error">
-                    @error('tel_middle')
-                    {{ $message }}
-                    @enderror
-                </div>
-                <!-- バリデーション(tel_low) -->
-                <div class="form__error">
-                    @error('tel_low')
-                    {{ $message }}
-                    @enderror
+                    @if ($errors->has('tel'))
+                    {{ $errors->first('tel') }}
+                    @endif
                 </div>
             </div>
         </div>
