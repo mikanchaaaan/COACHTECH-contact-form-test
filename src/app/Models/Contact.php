@@ -43,6 +43,8 @@ class Contact extends Model
                 $query->where('gender', 2);
             }else if($gender === 'その他') {
                 $query->where('gender', 3);
+            }else if($gender === '全て') {
+                $query->whereIn('gender', [1, 2, 3]);
             }
         }
     }

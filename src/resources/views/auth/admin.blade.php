@@ -32,6 +32,7 @@
                     <!-- 性別選択 -->
                     <select name="gender" class="search-form__item-gender">
                         <option value="">性別</option>
+                        <option value="全て">全て</option>
                         <option value="男性">男性</option>
                         <option value="女性">女性</option>
                         <option value="その他">その他</option>

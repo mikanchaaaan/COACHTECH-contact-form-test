@@ -8,8 +8,7 @@
         <div class="pagination">
             @if($contacts)
             {{ $contacts->appends(request()->query())->links('vendor.pagination.custom') }}
-            @else
-    @endif
+            @endif
         </div>
     </div>
     <!-- 情報の出力 -->
