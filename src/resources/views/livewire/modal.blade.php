@@ -1,9 +1,16 @@
 <div>
     <div class="export-and-pagination">
         <!-- エクスポートボタン -->
-        <div class="export__inner">
-            <button class="export-button">エクスポート</button>
-        </div>
+        <form action="/admin/export" method="post">
+            @csrf
+            <input type="hidden" name="keyword" value="{{ request('keyword') }}">
+            <input type="hidden" name="gender" value="{{ request('gender') }}">
+            <input type="hidden" name="category_id" value="{{ request('category_id') }}">
+            <input type="hidden" name="date" value="{{ request('date') }}">
+            <div class="export__inner">
+                <button class="export-button">エクスポート</button>
+            </div>
+        </form>
         <!-- ページネーション -->
         <div class="pagination">
             @if($contacts)

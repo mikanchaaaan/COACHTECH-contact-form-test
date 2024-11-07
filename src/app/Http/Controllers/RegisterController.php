@@ -52,6 +52,11 @@ class RegisterController extends Controller
         Request $request,
         CreatesNewUsers $creator
     ): RegisterResponse {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',  // メールアドレスのバリデーションルール
+            'password' => 'required|min:8',  // パスワードのバリデーションルール
+        ]);
         event(new Registered($user = $creator->create($request->all())));
 
         return app(RegisterResponse::class);
